@@ -1,2 +1,2 @@
 # info2180-lab4
-Jantae Leckie Lab 4
+This is Lab 4 for <Jantae Leckie> 
