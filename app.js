@@ -50,11 +50,14 @@ function mystarter(){
             })
             .then(data => {
                 console.log(data);
-                var hero = JSON.parse(data);
+                var hero = handleJSON(data);
                 if (typeof(hero) === "string"){
                     console.log("This is string");
                     console.log(typeof(hero));
-                    biography.innerHTML = data ;
+                    msg.innerHTML = data ;
+                    heroname.innerHTML = '' ;
+                    alias.innerHTML = '';
+                biography.innerHTML = '';
                 } else if (typeof(hero) === "object"){
                     console.log(typeof(hero));
                     console.log("This is object");
@@ -76,7 +79,15 @@ function mystarter(){
 
 
 
-
+function handleJSON(data){
+    try{
+        var hero = JSON.parse(data);
+        
+    }catch(err){
+        return data
+    }
+    return hero
+}
 
 
 
